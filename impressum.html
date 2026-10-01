@@ -41,6 +41,7 @@ p.lead a{font-weight:650}
 .seite h2 a:hover{text-decoration:underline}
 .seite>header :focus-visible{outline-color:#fff}
 .karten{display:grid;gap:16px;margin:0;padding:0;list-style:none}
+@media (min-width:880px){.karten.raster{grid-template-columns:1fr 1fr}.karten.raster .karte h2{font-size:.88rem;overflow-wrap:anywhere}.karten.raster .karte-fuss{padding-inline:16px}}
 .karte{margin:0}
 .karte h2{font-size:.96rem;letter-spacing:-.01em;overflow-wrap:normal}
 .karte>header{gap:12px;padding-inline:16px}
