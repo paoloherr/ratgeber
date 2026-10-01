@@ -33,11 +33,6 @@ h1{margin:0 0 12px;font-size:clamp(1.875rem,1.35rem + 2.2vw,2.625rem);line-heigh
 h2{font-size:1.125rem;line-height:1.3;margin:0}
 p.lead{margin:0 0 28px;max-width:60ch;color:var(--mu);font-size:1.0625rem}
 p.lead a{font-weight:650}
-.konten{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 32px;padding:0;list-style:none}
-.konten a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:4px 16px 4px 4px;border:1px solid var(--li);border-radius:999px;background:var(--fl);color:var(--fg);font-size:.9375rem;font-weight:600;text-decoration:none}
-.konten a:hover{border-color:var(--a)}
-.konten img,.konten .punkt{width:34px;height:34px;border-radius:50%;flex:none;object-fit:cover}
-.konten .punkt{background:linear-gradient(135deg,var(--g1),var(--g2))}
 .seite{margin:0 0 24px;overflow:hidden;background:var(--fl);border:1px solid var(--li);border-radius:18px;box-shadow:var(--schatten);scroll-margin-top:16px}
 .seite>header{display:flex;align-items:center;gap:14px;padding:18px 20px;color:#fff;background:var(--g2);background:linear-gradient(135deg,var(--g1),var(--g2))}
 .seite>header img{width:52px;height:52px;flex:none;border-radius:50%;border:2px solid rgb(255 255 255/.7);object-fit:cover}
@@ -45,6 +40,17 @@ p.lead a{font-weight:650}
 .seite h2 a{display:inline-flex;align-items:center;min-height:44px;color:#fff;text-decoration:none}
 .seite h2 a:hover{text-decoration:underline}
 .seite>header :focus-visible{outline-color:#fff}
+.karten{display:grid;gap:16px;margin:0;padding:0;list-style:none}
+.karte{margin:0}
+.karte h2{font-size:.96rem;letter-spacing:-.01em;overflow-wrap:normal}
+.karte>header{gap:12px;padding-inline:16px}
+.karte>header{align-items:center}
+.karte .kopf-text{display:flex;min-width:0;flex-direction:column;gap:2px}
+.karte .thema{margin:0;color:#fff;font-size:.875rem;line-height:1.4}
+.karte-fuss{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;padding:14px 20px 18px}
+.karte .anzahl{color:var(--mu);font-size:.9375rem;font-weight:600}
+.karte a.knopf{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:10px;background:var(--a);color:var(--fl);font-weight:700;text-decoration:none}
+.karte a.knopf:hover{text-decoration:underline}
 .liste{margin:0;padding:0 0 4px;list-style:none}
 .liste a{display:flex;align-items:center;gap:14px;min-height:64px;padding:14px 20px;border-top:1px solid var(--li);color:var(--fg);text-decoration:none}
 .liste li:first-child a{border-top:0}
@@ -83,7 +89,6 @@ footer a:hover{color:var(--fg)}
 .newsletter a.knopf:hover{text-decoration:underline}
 .newsletter p.klein{margin:12px 0 0;font-size:.8125rem}
 .sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
-@media (max-width:719px){.konten{flex-wrap:nowrap;overflow-x:auto;margin:0 -16px 28px;padding:4px 16px;scroll-snap-type:x proximity;scroll-padding-inline:16px;scrollbar-width:none}.konten::-webkit-scrollbar{display:none}.konten li{flex:none;scroll-snap-align:start}}
 @media (prefers-reduced-motion:no-preference){a,.ic{transition:background-color .15s ease,color .15s ease,border-color .15s ease}}
 @media (min-width:720px){main{padding:56px 24px 64px}.kopf-innen,.fuss{padding-left:24px;padding-right:24px}
 .seite>header{padding:20px 24px}.liste a{padding:14px 24px}.recht{padding:12px 32px 32px}}
