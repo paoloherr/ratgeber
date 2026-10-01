@@ -67,6 +67,14 @@ footer{background:var(--fl);border-top:1px solid var(--li);color:var(--mu);font-
 footer a{display:inline-flex;align-items:center;min-height:44px;padding:0 8px;color:var(--mu)}
 footer a:hover{color:var(--fg)}
 .fuss p{margin:4px 0 0}
+.liste a.zusatz{min-height:44px;padding:0 20px 12px 20px;border-top:0;color:var(--a);font-size:.875rem;font-weight:600}
+.werbung-label{display:inline-block;padding:1px 8px;border-radius:999px;background:#c81e1e;color:#fff;font-size:.75rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.empfehlung{margin:0 0 16px;padding:18px 20px;background:var(--fl);border:1px solid var(--li);border-left:4px solid var(--a);border-radius:14px;box-shadow:var(--schatten)}
+.empfehlung h2{margin:2px 0 6px}
+.empfehlung .kat{color:var(--mu);font-size:.8125rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.empfehlung p{margin:0 0 12px;max-width:62ch}
+.empfehlung a.knopf{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:10px;background:var(--a);color:var(--fl);font-weight:700;text-decoration:none}
+.pflicht{font-weight:650}
 @media (max-width:719px){.konten{flex-wrap:nowrap;overflow-x:auto;margin:0 -16px 28px;padding:4px 16px;scroll-snap-type:x proximity;scroll-padding-inline:16px;scrollbar-width:none}.konten::-webkit-scrollbar{display:none}.konten li{flex:none;scroll-snap-align:start}}
 @media (prefers-reduced-motion:no-preference){a,.ic{transition:background-color .15s ease,color .15s ease,border-color .15s ease}}
 @media (min-width:720px){main{padding:56px 24px 64px}.kopf-innen,.fuss{padding-left:24px;padding-right:24px}
@@ -83,6 +91,7 @@ footer a:hover{color:var(--fg)}
 <h2>3. Aufruf dieser Website (Hosting über GitHub Pages)</h2>
 <p>Diese Website wird bei GitHub Pages gehostet (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA). Beim Aufruf verarbeitet GitHub technisch notwendige Verbindungsdaten wie IP-Adresse, Zeitpunkt, aufgerufene Datei und Browser-Kennung, um die Seite auszuliefern und die Sicherheit zu gewährleisten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer sicheren, funktionsfähigen Bereitstellung). GitHub ist unter dem EU-US Data Privacy Framework zertifiziert; Details in der <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">Datenschutzerklärung von GitHub</a>. Ich selbst habe keinen Zugriff auf diese Logdaten.</p>
 <p>Diese Website setzt <strong>keine Cookies</strong>, kein Tracking, keine Analyse-Tools, keine eingebundenen Schriftarten und keine Inhalte Dritter ein. Für den Download der Ratgeber-PDFs ist keine Anmeldung und keine Angabe persönlicher Daten nötig; die Freischaltzeiten der Ratgeber werden ausschließlich in deinem Browser berechnet.</p>
+<p><strong>Affiliate-Links zu Amazon:</strong> Einige Ratgeber verweisen auf eine als Werbung gekennzeichnete Empfehlungsseite mit Links zu Amazon (Amazon-Partnerprogramm). Diese Website selbst setzt dafür weder Cookies noch Tracking ein und übermittelt beim Aufruf keine Daten an Amazon. Erst wenn du einen solchen Link anklickst, gelangst du zu Amazon (Amazon Europe Core S.à r.l., Amazon EU S.à r.l., Amazon Services Europe S.à r.l. und Amazon Media EU S.à r.l., 38 avenue John F. Kennedy, L-1855 Luxemburg). Amazon verarbeitet dann in eigener Verantwortung Daten, setzt Cookies bzw. ähnliche Technologien ein und erkennt anhand der Partner-Kennung im Link, dass du über diese Seite gekommen bist, um eine mögliche Provision zuzuordnen. Personenbezogene Daten über dich erhalte ich dabei nicht; Amazon zeigt mir nur zusammengefasste Klick- und Verkaufszahlen. Einzelheiten stehen in der <a href="https://www.amazon.de/gp/help/customer/display.html?nodeId=201909010" rel="noopener">Datenschutzerklärung von Amazon</a>.</p>
 <h2>4. Instagram-Accounts</h2>
 <p>Für die Instagram-Accounts gilt zusätzlich die Datenschutzrichtlinie von Meta (Meta Platforms Ireland Ltd., Merrion Road, Dublin 4, Irland): <a href="https://privacycenter.instagram.com/policy" rel="noopener">privacycenter.instagram.com/policy</a>. Rechtsgrundlage für den Betrieb der Accounts ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Information über meine Themen und an der Kommunikation mit Nutzerinnen und Nutzern). Wenn du einem Account folgst, einen Beitrag likest, speicherst, teilst oder kommentierst, verarbeitet Meta diese Daten in eigener Verantwortung; ich sehe nur die Informationen, die Instagram mir als Betreiber der Accounts anzeigt (z. B. Benutzername und Kommentartext).</p>
 <p>Zur Verbesserung der Inhalte werte ich die von Instagram bereitgestellten Statistiken zu Reichweite und Interaktionen (Insights) aus; diese Daten sind aggregiert und lassen keinen Rückschluss auf einzelne Personen zu. Für die Verarbeitung, aus der Instagram diese Statistiken erstellt, bin ich gemeinsam mit Meta Platforms Ireland Ltd. verantwortlich (Art. 26 DSGVO). Die Vereinbarung dazu findest du unter <a href="https://www.facebook.com/legal/terms/page_controller_addendum" rel="noopener">facebook.com/legal/terms/page_controller_addendum</a>; danach übernimmt Meta die primäre Verantwortung für diese Verarbeitung und die Erfüllung deiner Betroffenenrechte. Du kannst dich mit deinen Rechten aber auch jederzeit an mich wenden. Meta verarbeitet Daten auch in den USA; die Übermittlung stützt sich auf das EU-US Data Privacy Framework, für das Meta zertifiziert ist, sowie auf die Standarddatenschutzklauseln der EU-Kommission.</p>
@@ -101,7 +110,7 @@ footer a:hover{color:var(--fg)}
 <p>Außerdem hast du das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren, zum Beispiel beim Landesbeauftragten für den Datenschutz und die Informationsfreiheit Rheinland-Pfalz (Hintere Bleiche 34, 55116 Mainz, <a href="https://www.datenschutz.rlp.de" rel="noopener">datenschutz.rlp.de</a>).</p>
 <h2>10. Änderungen</h2>
 <p>Diese Datenschutzerklärung wird angepasst, wenn sich die eingesetzten Dienste oder die Rechtslage ändern. Es gilt die jeweils hier veröffentlichte Fassung.</p>
-<p>Stand: 30. September 2026</p></article>
+<p>Stand: 1. Oktober 2026</p></article>
 </main>
 <script>
 // Blendet Eintraege mit data-ab erst ab ihrer Freischaltzeit ein (1 min nach dem Post)
