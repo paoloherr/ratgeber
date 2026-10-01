@@ -2,33 +2,81 @@
 <html lang="de"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151b25" media="(prefers-color-scheme: dark)">
 <title>Datenschutz</title><style>
-:root{--bg:#f6f5f2;--fg:#1b1b1f;--muted:#5d5d66;--card:#fff;--line:#e3e1dc}
-@media (prefers-color-scheme:dark){:root{--bg:#121216;--fg:#ececf1;--muted:#a3a3ad;--card:#1c1c22;--line:#2c2c34}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
-font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-main{max-width:720px;margin:0 auto;padding:32px 16px 48px}
-h1{font-size:1.6rem;margin:0 0 6px}h2{font-size:1.15rem;margin:0}
-p.lead{color:var(--muted);margin:0 0 28px}
-nav.rechts{font-size:.85rem;color:var(--muted);margin:0 0 18px}
-nav.rechts a{color:var(--muted)}
-.seite{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:0 0 18px;overflow:hidden}
-.seite header{padding:14px 18px;color:#fff;display:flex;align-items:center;gap:12px}
-.seite header img{width:40px;height:40px;border-radius:50%;border:2px solid #fff6}
-.seite header a{color:#fff}
-ul{list-style:none;margin:0;padding:6px 0}
-li a{display:flex;justify-content:space-between;gap:12px;padding:12px 18px;color:var(--fg);text-decoration:none;border-top:1px solid var(--line)}
-li:first-child a{border-top:0}
-li a:hover{background:color-mix(in srgb,var(--fg) 5%,transparent)}
-li small{color:var(--muted);white-space:nowrap}
-.hinweis{font-size:.85rem;color:var(--muted);margin-top:28px}
-footer{font-size:.85rem;color:var(--muted);border-top:1px solid var(--line);margin-top:32px;padding-top:16px}
-footer a{color:var(--muted)}
-p.lead a{color:var(--fg)}
-@media (max-width:560px){li a{flex-direction:column;gap:2px}}
+:root{color-scheme:light dark;--bg:#f4f6f9;--fl:#fff;--fg:#0f172a;--mu:#475569;--li:#e2e8f0;--a:#1d4ed8;--at:#e8eefc;--fokus:#1d4ed8;--schatten:0 1px 2px rgb(15 23 42/.05),0 10px 28px -14px rgb(15 23 42/.18)}
+@media (prefers-color-scheme:dark){:root{--bg:#0b0f16;--fl:#151b25;--fg:#e8ecf2;--mu:#a3adbd;--li:#273142;--a:#93c5fd;--at:#1b2540;--fokus:#93c5fd;--schatten:0 1px 2px rgb(0 0 0/.35)}}
+[data-akzent]{--a:var(--ah);--at:var(--ath)}
+@media (prefers-color-scheme:dark){[data-akzent]{--a:var(--ad);--at:var(--atd)}}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;background:var(--bg);color:var(--fg);
+font:400 1rem/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--a);text-underline-offset:.18em}
+:focus-visible{outline:3px solid var(--fokus);outline-offset:3px;border-radius:6px}
+main:focus{outline:none}
+.skip{position:absolute;left:12px;top:-80px;z-index:10;padding:12px 18px;border-radius:10px;background:var(--fg);color:var(--bg);font-weight:700;text-decoration:none}
+.skip:focus{top:12px}
+.kopf{background:var(--fl);border-bottom:1px solid var(--li)}
+.kopf-innen,.fuss{max-width:760px;margin:0 auto;padding:6px 16px}
+.kopf-innen{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 12px}
+.marke{display:inline-flex;align-items:center;gap:10px;min-height:48px;color:var(--fg);font-weight:800;letter-spacing:-.01em;text-decoration:none}
+.marke svg{color:var(--a)}
+nav.rechts{display:flex;flex-wrap:wrap;margin:0 -8px;font-size:.875rem}
+nav.rechts a{display:inline-flex;align-items:center;min-height:44px;padding:0 8px;color:var(--mu);text-decoration:none;border-radius:8px}
+nav.rechts a:hover{color:var(--fg);text-decoration:underline}
+main{flex:1;width:100%;max-width:760px;margin:0 auto;padding:36px 16px 48px}
+h1{margin:0 0 12px;font-size:clamp(1.875rem,1.35rem + 2.2vw,2.625rem);line-height:1.12;font-weight:800;letter-spacing:-.025em;text-wrap:balance}
+h2{font-size:1.125rem;line-height:1.3;margin:0}
+p.lead{margin:0 0 28px;max-width:60ch;color:var(--mu);font-size:1.0625rem}
+p.lead a{font-weight:650}
+.konten{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 32px;padding:0;list-style:none}
+.konten a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:4px 16px 4px 4px;border:1px solid var(--li);border-radius:999px;background:var(--fl);color:var(--fg);font-size:.9375rem;font-weight:600;text-decoration:none}
+.konten a:hover{border-color:var(--a)}
+.konten img,.konten .punkt{width:34px;height:34px;border-radius:50%;flex:none;object-fit:cover}
+.konten .punkt{background:linear-gradient(135deg,var(--g1),var(--g2))}
+.seite{margin:0 0 24px;overflow:hidden;background:var(--fl);border:1px solid var(--li);border-radius:18px;box-shadow:var(--schatten);scroll-margin-top:16px}
+.seite>header{display:flex;align-items:center;gap:14px;padding:18px 20px;color:#fff;background:var(--g2);background:linear-gradient(135deg,var(--g1),var(--g2))}
+.seite>header img{width:52px;height:52px;flex:none;border-radius:50%;border:2px solid rgb(255 255 255/.7);object-fit:cover}
+.seite h2{min-width:0;overflow-wrap:anywhere}
+.seite h2 a{display:inline-flex;align-items:center;min-height:44px;color:#fff;text-decoration:none}
+.seite h2 a:hover{text-decoration:underline}
+.seite>header :focus-visible{outline-color:#fff}
+.liste{margin:0;padding:0 0 4px;list-style:none}
+.liste a{display:flex;align-items:center;gap:14px;min-height:64px;padding:14px 20px;border-top:1px solid var(--li);color:var(--fg);text-decoration:none}
+.liste li:first-child a{border-top:0}
+.liste a:hover{background:rgb(127 127 127/.07)}
+.liste a:focus-visible{outline-offset:-3px;border-radius:12px}
+.liste .t{display:flex;flex:1;min-width:0;flex-direction:column;gap:3px;font-weight:600;line-height:1.38;overflow-wrap:anywhere}
+.liste small{color:var(--mu);font-size:.8125rem;font-weight:500}
+.liste .ic{display:grid;place-items:center;flex:none;width:44px;height:44px;border-radius:12px;background:var(--at);color:var(--a)}
+.liste a:hover .ic{background:var(--a);color:var(--fl)}
+.hinweis{display:flex;gap:12px;margin:32px 0 0;padding:16px 18px;border:1px solid var(--li);border-radius:14px;background:var(--fl);color:var(--mu);font-size:.875rem;line-height:1.55}
+.hinweis::before{content:"i";content:"i"/"";display:grid;place-items:center;flex:none;width:24px;height:24px;border-radius:50%;background:var(--at);color:var(--a);font:italic 700 .875rem/1 Georgia,"Times New Roman",serif}
+.recht{padding:8px 20px 24px;background:var(--fl);border:1px solid var(--li);border-radius:18px;box-shadow:var(--schatten);overflow-wrap:anywhere}
+.recht h2{margin:28px 0 8px}
+.recht p,.recht ul{max-width:68ch}
+.recht ul{padding-left:1.25rem}
+.recht li{margin:4px 0}
+footer{background:var(--fl);border-top:1px solid var(--li);color:var(--mu);font-size:.875rem}
+.fuss{padding:12px 16px 28px}
+.fuss nav{display:flex;flex-wrap:wrap;align-items:center;margin:0 -8px}
+footer a{display:inline-flex;align-items:center;min-height:44px;padding:0 8px;color:var(--mu)}
+footer a:hover{color:var(--fg)}
+.fuss p{margin:4px 0 0}
+@media (max-width:719px){.konten{flex-wrap:nowrap;overflow-x:auto;margin:0 -16px 28px;padding:4px 16px;scroll-snap-type:x proximity;scroll-padding-inline:16px;scrollbar-width:none}.konten::-webkit-scrollbar{display:none}.konten li{flex:none;scroll-snap-align:start}}
+@media (prefers-reduced-motion:no-preference){a,.ic{transition:background-color .15s ease,color .15s ease,border-color .15s ease}}
+@media (min-width:720px){main{padding:56px 24px 64px}.kopf-innen,.fuss{padding-left:24px;padding-right:24px}
+.seite>header{padding:20px 24px}.liste a{padding:14px 24px}.recht{padding:12px 32px 32px}}
 </style></head>
-<body><main><nav class="rechts"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a></nav>
-<h1>Datenschutz</h1><h2>1. Verantwortlicher</h2>
+<body><a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<header class="kopf"><div class="kopf-innen"><a class="marke" href="./"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 19V5a2 2 0 0 1 2-2h14v14H6a2 2 0 0 0-2 2 2 2 0 0 0 2 2h14v-4"/></svg>Gratis-Ratgeber</a>
+<nav class="rechts" aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="nutzungsbedingungen.html">Nutzungsbedingungen</a></nav></div></header>
+<main id="inhalt" tabindex="-1">
+<h1>Datenschutz</h1><article class="recht"><h2>1. Verantwortlicher</h2>
 <p>Paolo Schönherr, Pranckhstr. 50, 67061 Ludwigshafen am Rhein, E-Mail: <a href="mailto:paolo-schoenherr@gmx.de">paolo-schoenherr@gmx.de</a></p>
 <h2>2. Überblick</h2>
 <p>Diese Datenschutzerklärung gilt für die Website paoloherr.github.io/ratgeber und für die Instagram-Accounts @ki_tech_tipps, @finance_invest_tipps, @fitness_supplements_tipps, @beziehung_psychologie_tipps und @digital_business_tipps. Ich verarbeite personenbezogene Daten nur, soweit es für den Betrieb der Website, der Instagram-Accounts und die Beantwortung von Kommentaren und Anfragen erforderlich ist. Es werden keine Daten verkauft und keine Profile für Werbezwecke erstellt.</p>
@@ -53,10 +101,12 @@ p.lead a{color:var(--fg)}
 <p>Außerdem hast du das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren, zum Beispiel beim Landesbeauftragten für den Datenschutz und die Informationsfreiheit Rheinland-Pfalz (Hintere Bleiche 34, 55116 Mainz, <a href="https://www.datenschutz.rlp.de" rel="noopener">datenschutz.rlp.de</a>).</p>
 <h2>10. Änderungen</h2>
 <p>Diese Datenschutzerklärung wird angepasst, wenn sich die eingesetzten Dienste oder die Rechtslage ändern. Es gilt die jeweils hier veröffentlichte Fassung.</p>
-<p>Stand: 30. September 2026</p>
+<p>Stand: 30. September 2026</p></article>
+</main>
 <script>
 // Blendet Eintraege mit data-ab erst ab ihrer Freischaltzeit ein (1 min nach dem Post)
 (function(){function f(){var n=Date.now();document.querySelectorAll('[data-ab]').forEach(function(e){e.hidden=n<Date.parse(e.dataset.ab);});}f();setInterval(f,15000);})();
 </script>
-<footer><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a><br>© 2026 Paolo Schönherr · Stand: 01.10.2026 · Inhalte KI-generiert</footer>
-</main></body></html>
+<footer><div class="fuss"><nav aria-label="Rechtliches (Fußzeile)"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a></nav>
+<p>© 2026 Paolo Schönherr · Stand: 01.10.2026 · Inhalte KI-generiert</p></div></footer>
+</body></html>
