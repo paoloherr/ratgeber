@@ -89,6 +89,14 @@ footer a:hover{color:var(--fg)}
 .newsletter a.knopf{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:10px;background:var(--a);color:var(--fl);font-weight:700;text-decoration:none}
 .newsletter a.knopf:hover{text-decoration:underline}
 .newsletter p.klein{margin:12px 0 0;font-size:.8125rem}
+.pfad{margin:0 0 8px;font-size:.875rem}
+.pfad ol{display:flex;flex-wrap:wrap;align-items:center;gap:0 6px;margin:0;padding:0;list-style:none;color:var(--mu)}
+.pfad li+li::before{content:"›";content:"›"/"";margin-right:6px}
+.pfad a{display:inline-flex;align-items:center;min-height:44px;font-weight:600}
+.pfad [aria-current]{color:var(--fg);font-weight:600}
+.woche{margin:0;padding:12px 20px;border-bottom:1px solid var(--li);color:var(--mu);font-size:.9375rem}
+.woche strong{color:var(--fg)}
+.archiv>h2{padding:18px 20px 6px}
 .sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 @media (prefers-reduced-motion:no-preference){a,.ic{transition:background-color .15s ease,color .15s ease,border-color .15s ease}}
 @media (min-width:720px){main{padding:56px 24px 64px}.kopf-innen,.fuss{padding-left:24px;padding-right:24px}
@@ -104,8 +112,9 @@ footer a:hover{color:var(--fg)}
 </script><aside class="newsletter" aria-labelledby="newsletter-titel"><span class="nl-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div><h2 id="newsletter-titel">Neue Ratgeber per E-Mail</h2><p>Einmal pro Woche die neuesten Gratis-Ratgeber in dein Postfach. Kostenlos, jederzeit abbestellbar. Für den Download brauchst du keine Anmeldung.</p><a class="knopf" href="https://e7c4f0a3.sibforms.com/serve/MUIFAL5pPUxP7LrPSSv7CdReeFeHmRA1StAQSuEFqRWEkRyelTG5DTJ0kbnUw8PjxKBk5s8fbJf9P_pjF1ryb1yE-8fkuE8dmjHXX5K1aZQh69RtTXysuSlEWizAIAexYq1LN0AL6QEcD9X11g3Lj210YQ2AL3bv6d2LaXgGx46IAyx1_shl30YOUDJzaz80ctUAHcbqGObHsy4e8g==" target="_blank" rel="noopener">Kostenlos anmelden<span class="sr"> (öffnet das Anmeldeformular bei Brevo in neuem Tab)</span></a><p class="klein">Die Anmeldung läuft über Brevo; Details in der <a href="datenschutz.html#newsletter">Datenschutzerklärung</a>.</p></div></aside><p class='hinweis'>Alle Inhalte sind KI-generiert (Art. 50 KI-VO), dienen der allgemeinen Information und ersetzen keine Anlage-, Steuer-, Rechts-, medizinische, ernährungsfachliche oder therapeutische Beratung im Einzelfall. Angaben ohne Gewähr.</p>
 </main>
 <script>
-// Blendet Eintraege mit data-ab erst ab ihrer Freischaltzeit ein (1 min nach dem Post)
-(function(){function f(){var n=Date.now();document.querySelectorAll('[data-ab]').forEach(function(e){e.hidden=n<Date.parse(e.dataset.ab);});}f();setInterval(f,15000);})();
+// Blendet Eintraege mit data-ab erst ab ihrer Freischaltzeit ein (1 min nach dem Post);
+// data-bis blendet sie ab dann aus (Konto-Uebersicht: neueste Woche loest die vorige ab)
+(function(){function f(){var n=Date.now();document.querySelectorAll('[data-ab],[data-bis]').forEach(function(e){var a=e.dataset.ab,b=e.dataset.bis;e.hidden=!!((a&&n<Date.parse(a))||(b&&n>=Date.parse(b)));});}f();setInterval(f,15000);})();
 </script>
 <footer><div class="fuss"><nav aria-label="Rechtliches (Fußzeile)"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a></nav>
 <p>© 2026 Paolo Schönherr · Stand: 03.10.2026 · Inhalte KI-generiert</p></div></footer>
