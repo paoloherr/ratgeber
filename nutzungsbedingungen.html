@@ -96,12 +96,34 @@ footer a:hover{color:var(--fg)}
 .pfad [aria-current]{color:var(--fg);font-weight:600}
 .woche{margin:0;padding:12px 20px;border-bottom:1px solid var(--li);color:var(--mu);font-size:.9375rem}
 .woche strong{color:var(--fg)}
-.archiv>h2{padding:18px 20px 6px}
+.archiv{border-top:1px solid var(--li)}
+.archiv>h3{margin:0;padding:18px 20px 6px;font-size:1.0625rem;line-height:1.3}
+.klapp>header{padding:0}
+.klapp>header h2{flex:1;min-width:0}
+.umschalter{display:flex;align-items:center;gap:14px;width:100%;min-height:64px;margin:0;padding:18px 20px;border:0;border-radius:0;
+background:none;color:#fff;font:inherit;line-height:1.3;text-align:left;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.umschalter:focus-visible{outline:3px solid #fff;outline-offset:-6px;border-radius:14px}
+.umschalter:hover .k-titel{text-decoration:underline}
+.umschalter .kopf-text{display:flex;flex:1;min-width:0;flex-direction:column;gap:2px;overflow-wrap:anywhere}
+.umschalter .k-info{font-size:.875rem;font-weight:500;opacity:.92}
+.pfeil{display:grid;place-items:center;flex:none;width:36px;height:36px;margin-left:auto;border-radius:50%;background:rgb(255 255 255/.16)}
+.pfeil svg{transform:rotate(90deg)}
+html:not(.js) .pfeil{display:none}
+.klapp-inhalt{display:grid;grid-template-rows:1fr}
+.klapp-inhalt>div{min-width:0;min-height:0;overflow:hidden}
+.js .klapp:not(.auf)>.klapp-inhalt{grid-template-rows:0fr;visibility:hidden}
+.js .klapp.auf .pfeil svg{transform:rotate(270deg)}
+.mehr{margin:0;padding:4px 20px 12px;border-top:1px solid var(--li);font-size:.9375rem;font-weight:600}
+.mehr a{display:inline-flex;align-items:center;min-height:44px}
+@media (prefers-reduced-motion:no-preference){.js .klapp>.klapp-inhalt{transition:grid-template-rows .3s ease,visibility 0s linear 0s}
+.js .klapp:not(.auf)>.klapp-inhalt{transition:grid-template-rows .3s ease,visibility 0s linear .3s}.pfeil svg{transition:transform .3s ease}
+.js.klapp-start .klapp>.klapp-inhalt,.js.klapp-start .pfeil svg{transition:none}}
 .sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 @media (prefers-reduced-motion:no-preference){a,.ic{transition:background-color .15s ease,color .15s ease,border-color .15s ease}}
 @media (min-width:720px){main{padding:56px 24px 64px}.kopf-innen,.fuss{padding-left:24px;padding-right:24px}
-.seite>header{padding:20px 24px}.liste a{padding:14px 24px}.recht{padding:12px 32px 32px}}
-</style></head>
+.seite>header{padding:20px 24px}.klapp>header{padding:0}.umschalter{padding:20px 24px}.liste a{padding:14px 24px}.recht{padding:12px 32px 32px}}
+</style>
+<script>document.documentElement.classList.add('js','klapp-start')</script></head>
 <body><a class="skip" href="#inhalt">Zum Inhalt springen</a>
 <header class="kopf"><div class="kopf-innen"><a class="marke" href="./"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 19V5a2 2 0 0 1 2-2h14v14H6a2 2 0 0 0-2 2 2 2 0 0 0 2 2h14v-4"/></svg>Gratis-Ratgeber</a>
 <nav class="rechts" aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="nutzungsbedingungen.html">Nutzungsbedingungen</a></nav></div></header>
@@ -132,6 +154,8 @@ footer a:hover{color:var(--fg)}
 // Blendet Eintraege mit data-ab erst ab ihrer Freischaltzeit ein (1 min nach dem Post);
 // data-bis blendet sie ab dann aus (Konto-Uebersicht: neueste Woche loest die vorige ab)
 (function(){function f(){var n=Date.now();document.querySelectorAll('[data-ab],[data-bis]').forEach(function(e){var a=e.dataset.ab,b=e.dataset.bis;e.hidden=!!((a&&n<Date.parse(a))||(b&&n>=Date.parse(b)));});}f();setInterval(f,15000);})();
+// Farbige Balken klappen ihre Liste auf/zu; Zustand je Balken wird (falls erlaubt) im Browser gemerkt
+(function(){var d=document.documentElement;function lies(k){try{return localStorage.getItem(k);}catch(e){return null;}}function merke(k,v){try{localStorage.setItem(k,v);}catch(e){}}function setze(s,b,auf){s.classList.toggle('auf',auf);b.setAttribute('aria-expanded',auf?'true':'false');}document.querySelectorAll('.klapp').forEach(function(s){var b=s.querySelector('.umschalter');if(!b)return;var k='klapp:'+location.pathname+'#'+s.id,g=lies(k);if(g==='auf'||g==='zu')setze(s,b,g==='auf');b.addEventListener('click',function(){var auf=!s.classList.contains('auf');setze(s,b,auf);merke(k,auf?'auf':'zu');});});requestAnimationFrame(function(){requestAnimationFrame(function(){d.classList.remove('klapp-start');});});})();
 </script>
 <footer><div class="fuss"><nav aria-label="Rechtliches (Fußzeile)"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a></nav>
 <p>© 2026 Paolo Schönherr · Stand: 03.10.2026 · Inhalte KI-generiert</p></div></footer>
