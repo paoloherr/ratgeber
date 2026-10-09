@@ -96,6 +96,23 @@ footer a:hover{color:var(--fg)}
 .newsletter a.knopf{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:10px;background:var(--a);color:var(--fl);font-weight:700;text-decoration:none}
 .newsletter a.knopf:hover{text-decoration:underline}
 .newsletter p.klein{margin:12px 0 0;font-size:.8125rem}
+.nl-leiste{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:0 0 20px;padding:12px 16px;background:var(--fl);border:1px solid var(--li);border-left:4px solid var(--a);border-radius:14px}
+.nl-leiste .nl-ic{display:grid;place-items:center;flex:none;width:36px;height:36px;border-radius:10px;background:var(--at);color:var(--a)}
+.nl-leiste p{flex:1 1 260px;margin:0;color:var(--mu)}
+.nl-leiste p strong{color:inherit}
+.nl-leiste .klein{display:block;margin-top:4px;font-size:.8125rem}
+.nl-leiste a.knopf{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:10px;background:var(--a);color:var(--fl);font-weight:700;text-decoration:none}
+.nl-leiste a.knopf:hover{text-decoration:underline}
+.mk-ki{padding:10px 14px;border:1px solid var(--li);border-radius:12px;background:var(--fl);color:var(--mu);font-size:.875rem}
+.mk-block{margin:28px 0 0}
+.mk-block ul{padding-left:1.2em}
+.mk-scroll{overflow-x:auto;margin:16px 0 0}
+.mk-tabelle{width:100%;border-collapse:collapse;margin:12px 0 0;font-size:.9375rem}
+.mk-tabelle th,.mk-tabelle td{padding:8px 10px;border-bottom:1px solid var(--li);text-align:left;vertical-align:top}
+.mk-tabelle tbody th{font-weight:600}
+.mk-uebersicht td{white-space:nowrap}
+p.klein{font-size:.8125rem;color:var(--mu)}
+.mk-link{margin:16px 0 0;font-size:.875rem;color:var(--mu)}
 .pfad{margin:0 0 8px;font-size:.875rem}
 .pfad ol{display:flex;flex-wrap:wrap;align-items:center;gap:0 6px;margin:0;padding:0;list-style:none;color:var(--mu)}
 .pfad li+li::before{content:"›";content:"›"/"";margin-right:6px}
@@ -179,5 +196,5 @@ html:not(.js) .pfeil{display:none}
 (function(){var d=document.documentElement;function lies(k){try{return sessionStorage.getItem(k);}catch(e){return null;}}function merke(k,v){try{sessionStorage.setItem(k,v);}catch(e){}}function setze(s,b,auf){s.classList.toggle('auf',auf);b.setAttribute('aria-expanded',auf?'true':'false');}document.querySelectorAll('.klapp').forEach(function(s){var b=s.querySelector('.umschalter');if(!b)return;var k='klapp:'+location.pathname+'#'+s.id,g=lies(k);if(g==='auf'||g==='zu')setze(s,b,g==='auf');b.addEventListener('click',function(){var auf=!s.classList.contains('auf');setze(s,b,auf);merke(k,auf?'auf':'zu');});});requestAnimationFrame(function(){requestAnimationFrame(function(){d.classList.remove('klapp-start');});});})();
 </script>
 <footer><div class="fuss"><nav aria-label="Rechtliches (Fußzeile)"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a></nav>
-<p>© 2026 Paolo Schönherr · Stand: 08.10.2026 · Inhalte KI-generiert</p></div></footer>
+<p>© 2026 Paolo Schönherr · Stand: 09.10.2026 · Inhalte KI-generiert</p></div></footer>
 </body></html>
