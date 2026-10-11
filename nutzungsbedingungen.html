@@ -201,5 +201,5 @@ html:not(.js) .pfeil{display:none}
 (function(){var d=document.documentElement;function lies(k){try{return sessionStorage.getItem(k);}catch(e){return null;}}function merke(k,v){try{sessionStorage.setItem(k,v);}catch(e){}}function setze(s,b,auf){s.classList.toggle('auf',auf);b.setAttribute('aria-expanded',auf?'true':'false');}document.querySelectorAll('.klapp').forEach(function(s){var b=s.querySelector('.umschalter');if(!b)return;var k='klapp:'+location.pathname+'#'+s.id,g=lies(k);if(g==='auf'||g==='zu')setze(s,b,g==='auf');b.addEventListener('click',function(){var auf=!s.classList.contains('auf');setze(s,b,auf);merke(k,auf?'auf':'zu');});});requestAnimationFrame(function(){requestAnimationFrame(function(){d.classList.remove('klapp-start');});});})();
 </script>
 <footer><div class="fuss"><nav aria-label="Rechtliches (Fußzeile)"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a></nav>
-<p>© 2026 Paolo Schönherr · Stand: 10.10.2026 · Inhalte KI-generiert</p></div></footer>
+<p>© 2026 Paolo Schönherr · Stand: 11.10.2026 · Inhalte KI-generiert</p></div></footer>
 </body></html>
