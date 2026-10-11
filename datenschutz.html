@@ -174,7 +174,7 @@ html:not(.js) .pfeil{display:none}
 <body><a class="skip" href="#inhalt">Zum Inhalt springen</a>
 <header class="kopf"><div class="kopf-innen"><a class="marke" href="./"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 19V5a2 2 0 0 1 2-2h14v14H6a2 2 0 0 0-2 2 2 2 0 0 0 2 2h14v-4"/></svg>Gratis-Ratgeber</a>
 <a class="hauptseite" href="./"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h13V10"/><path d="M10 20v-5.5h4V20"/></svg>Zur Hauptseite</a>
-<nav class="rechts" aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="nutzungsbedingungen.html">Nutzungsbedingungen</a></nav></div></header>
+<nav class="rechts" aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="nutzungsbedingungen.html">Nutzungsbedingungen</a><a href="ki/">KI-Hinweis</a></nav></div></header>
 <main id="inhalt" tabindex="-1">
 <h1>Datenschutz</h1><article class="recht"><h2>1. Verantwortlicher</h2>
 <p>Paolo Schönherr, Pranckhstr. 50, 67061 Ludwigshafen am Rhein, E-Mail: <a href="mailto:paolo-schoenherr@gmx.de">paolo-schoenherr@gmx.de</a></p>
@@ -222,6 +222,6 @@ html:not(.js) .pfeil{display:none}
 // Farbige Balken klappen ihre Liste auf/zu; Zustand je Balken wird (falls erlaubt) für die Sitzung gemerkt
 (function(){var d=document.documentElement;function lies(k){try{return sessionStorage.getItem(k);}catch(e){return null;}}function merke(k,v){try{sessionStorage.setItem(k,v);}catch(e){}}function setze(s,b,auf){s.classList.toggle('auf',auf);b.setAttribute('aria-expanded',auf?'true':'false');}document.querySelectorAll('.klapp').forEach(function(s){var b=s.querySelector('.umschalter');if(!b)return;var k='klapp:'+location.pathname+'#'+s.id,g=lies(k);if(g==='auf'||g==='zu')setze(s,b,g==='auf');b.addEventListener('click',function(){var auf=!s.classList.contains('auf');setze(s,b,auf);merke(k,auf?'auf':'zu');});});requestAnimationFrame(function(){requestAnimationFrame(function(){d.classList.remove('klapp-start');});});})();
 </script>
-<footer><div class="fuss"><nav aria-label="Rechtliches (Fußzeile)"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a></nav>
+<footer><div class="fuss"><nav aria-label="Rechtliches (Fußzeile)"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a> · <a href="ki/">KI-Hinweis</a></nav>
 <p>© 2026 Paolo Schönherr  · Stand: 09.10.2026</p></div></footer>
 </body></html>
