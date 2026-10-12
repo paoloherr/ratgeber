@@ -144,6 +144,12 @@ p.klein{font-size:.8125rem;color:var(--mu)}
 .seite>header .ig-knopf{border-color:rgb(255 255 255/.7);background:rgb(255 255 255/.16);color:#fff}
 .seite>header .ig-knopf:hover{border-color:#fff;background:rgb(255 255 255/.24);text-decoration:underline}
 .klapp>header .ig-knopf{margin:0 20px 18px}
+.fb-knopf{display:inline-flex;flex:none;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 16px;border:1.5px solid transparent;border-radius:999px;font-size:1rem;font-weight:700;line-height:1.2;text-decoration:none;white-space:nowrap}
+.fb-knopf svg{flex:none}
+.seite>header .fb-knopf{border-color:rgb(255 255 255/.7);background:rgb(255 255 255/.16);color:#fff}
+.seite>header .fb-knopf:hover{border-color:#fff;background:rgb(255 255 255/.24);text-decoration:underline}
+.klapp>header .fb-knopf{margin:0 20px 18px}
+.seite>header .ig-knopf+.fb-knopf{margin-left:8px}
 .ig-normal{border-color:var(--a);background:var(--a);color:var(--fl)}
 .ig-normal:hover{text-decoration:underline}
 .ig-zeile{margin:-12px 0 24px}
@@ -189,5 +195,5 @@ th a,.recht a{display:inline-block;padding-block:3px}
 (function(){var d=document.documentElement;function lies(k){try{return sessionStorage.getItem(k);}catch(e){return null;}}function merke(k,v){try{sessionStorage.setItem(k,v);}catch(e){}}function setze(s,b,auf){s.classList.toggle('auf',auf);b.setAttribute('aria-expanded',auf?'true':'false');}document.querySelectorAll('.klapp').forEach(function(s){var b=s.querySelector('.umschalter');if(!b)return;var k='klapp:'+location.pathname+'#'+s.id,g=lies(k);if(g==='auf'||g==='zu')setze(s,b,g==='auf');b.addEventListener('click',function(){var auf=!s.classList.contains('auf');setze(s,b,auf);merke(k,auf?'auf':'zu');});});requestAnimationFrame(function(){requestAnimationFrame(function(){d.classList.remove('klapp-start');});});})();
 </script>
 <footer><div class="fuss"><nav aria-label="Rechtliches (Fußzeile)"><a href="../impressum.html">Impressum</a> · <a href="../datenschutz.html">Datenschutz</a> · <a href="../nutzungsbedingungen.html">Nutzungsbedingungen</a> · <a href="../ki/">KI-Hinweis</a></nav>
-<p>© 2026 Paolo Schönherr  · Stand: 12.10.2026 · Inhalte KI-generiert</p></div></footer>
+<p>© 2026 Paolo Schönherr  · Stand: 13.10.2026 · Inhalte KI-generiert</p></div></footer>
 </body></html>
