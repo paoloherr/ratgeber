@@ -285,6 +285,34 @@ box-shadow:0 0 0 2px var(--a),0 0 16px 2px color-mix(in srgb,var(--a) 45%,transp
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.js .karte.vor{opacity:1;transform:none}}
 .karte>header .knoepfe a{padding:0 14px}
 @media (max-width:639px){.hero{padding-top:64px}.hero .bogen{width:92px}}
+
+/* ---- Raytracing-Look (Paolo, 17.10.2026): Hero-Bild mit Spiegelungen, Glas-Karten, Lichtreflex, Specular-Schimmer */
+body{overflow-x:clip}
+.hero{margin-top:calc(-1 * clamp(28px,3vw,64px));margin-inline:calc(50% - 50vw);padding-inline:max(var(--rand),calc(50vw - 50% + clamp(8px,6vw,240px)));
+padding-top:clamp(56px,6vw,150px);padding-bottom:clamp(40px,4.5vw,120px);
+background:linear-gradient(180deg,rgb(7 7 11/.25),rgb(7 7 11/.5) 62%,var(--bg) 100%),url(bilder/hero_1280.webp) center/cover no-repeat;background-color:var(--bg)}
+@media (min-width:1400px){.hero{background-image:linear-gradient(180deg,rgb(7 7 11/.25),rgb(7 7 11/.5) 62%,var(--bg) 100%),url(bilder/hero_1920.webp)}}
+@media (min-width:2200px){.hero{background-image:linear-gradient(180deg,rgb(7 7 11/.25),rgb(7 7 11/.5) 62%,var(--bg) 100%),url(bilder/hero_3840.webp)}}
+.hero h1,.hero p.lead{text-shadow:0 1px 10px rgb(0 0 0/.75)}
+.hero p.lead{color:#d6d9e4}
+.karte{position:relative;isolation:isolate;background:linear-gradient(180deg,rgb(255 255 255/.10),transparent 96px),rgb(255 255 255/.04)}
+@supports ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){.karte{-webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2)}}
+@supports not ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){.karte{background:linear-gradient(180deg,rgb(255 255 255/.08),transparent 96px),var(--fl)}}
+.kachel-bild::after{background:linear-gradient(180deg,transparent 50%,rgb(12 12 18/.82) 100%)}
+.karte::before{content:"";position:absolute;inset:0;z-index:2;border-radius:inherit;pointer-events:none;mix-blend-mode:screen;opacity:0;
+background:radial-gradient(160px circle at var(--mx,30%) var(--my,0),color-mix(in srgb,var(--ad) 18%,transparent),transparent 72%)}
+@media (hover:hover){.karte:hover::before{opacity:1}}
+@media (hover:none){.karte::before{opacity:.7}}
+.avatar-rahmen{position:relative;display:inline-block;flex:none;border-radius:50%;line-height:0}
+.avatar-rahmen::after,.kachel-bild::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;border-radius:inherit;
+background:linear-gradient(115deg,transparent 38%,rgb(255 255 255/.16) 50%,transparent 62%);background-size:300% 100%;background-position:120% 0}
+.mk-kopfbild .avatar-rahmen{position:absolute;left:var(--rand);bottom:var(--rand)}
+.mk-kopfbild .avatar-rahmen .avatar{position:static}
+@keyframes glanz{0%{background-position:120% 0}55%,100%{background-position:-20% 0}}
+@media (prefers-reduced-motion:no-preference){.karte::before{transition:opacity .3s ease}
+.avatar-rahmen::after,.kachel-bild::before{animation:glanz 8s ease-in-out infinite}}
+@media (prefers-reduced-motion:reduce){.karte::before{display:none}}
+.hero .bogen{display:none}   /* die Boegen liefert jetzt das Hero-Bild */
 [data-kopfbild][data-nische="beziehung-psychologie"]>header::before{background-image:url(bilder/kachel_beziehung-psychologie.webp);background-image:image-set(url(bilder/kachel_beziehung-psychologie.webp) 1x,url(bilder/kachel_beziehung-psychologie@2x.webp) 2x)}
 @media (max-width:639px){[data-kopfbild][data-nische="beziehung-psychologie"]>header::before{background-image:url(bilder/kachel_beziehung-psychologie_600.webp);background-image:image-set(url(bilder/kachel_beziehung-psychologie_600.webp) 1x,url(bilder/kachel_beziehung-psychologie.webp) 2x)}}
 [data-kopfbild][data-nische="digital-business"]>header::before{background-image:url(bilder/kachel_digital-business.webp);background-image:image-set(url(bilder/kachel_digital-business.webp) 1x,url(bilder/kachel_digital-business@2x.webp) 2x)}
