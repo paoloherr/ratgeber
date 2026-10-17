@@ -371,9 +371,20 @@ border-radius:999px;color:#9599a8;font-size:.9375rem;font-weight:600;white-space
 .marke .logo{display:block;flex:none;width:32px;height:32px;border-radius:50%;filter:drop-shadow(0 0 6px rgb(255 255 255/.16))}
 .mk-marke{max-width:min(440px,100%);margin:0 auto clamp(8px,1vw,16px);line-height:0}
 .mk-marke img{display:block;width:100%;height:auto;-webkit-mask-image:radial-gradient(closest-side,#000 84%,transparent);mask-image:radial-gradient(closest-side,#000 84%,transparent)}   /* schwarzer Bildgrund weich in den Seitengrund */
-@media (max-width:639px){.marke .logo{width:28px;height:28px}
-.hero{padding-top:54vw;background-image:linear-gradient(180deg,transparent 0,transparent 42%,rgb(7 7 11/.55) 62%,var(--bg) 100%),url(bilder/hero_mobil.webp);
-background-position:center top;background-size:cover}}
+@media (max-width:639px){.marke .logo{width:28px;height:28px}}
+
+/* ---- Hero mit Wortmarke im Bild (Paolo, 17.10.2026): Bild oben in voller Breite (Wortmarke + Wasserspiegelung),
+   Text (h1 „Gratis-Ratgeber“ + Satz) UNTER dem Bildbereich; Bild 3840x1600 = 41.67vw hoch, Spiegelung endet ~26vw */
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+.hero{padding-top:clamp(260px,26vw,1000px);padding-bottom:clamp(18px,2vw,56px);
+background:linear-gradient(180deg,rgb(7 7 11/0) 62%,var(--bg)) center top/100% 41.67vw no-repeat,url(bilder/hero_1280.webp) center top/100% auto no-repeat,var(--bg)}
+@media (min-width:1400px){.hero{background-image:linear-gradient(180deg,rgb(7 7 11/0) 62%,var(--bg)),url(bilder/hero_1920.webp)}}
+@media (min-width:2200px){.hero{background-image:linear-gradient(180deg,rgb(7 7 11/0) 62%,var(--bg)),url(bilder/hero_3840.webp)}}
+@media (min-width:880px){.hero{padding-top:clamp(260px,26vw,1000px)}}
+.hero h1{margin-top:0}
+/* Mobil: quadratisches Bild (Wortmarke oben, Spiegelung bis ~0,7), Text darunter */
+@media (max-width:639px){.hero{padding-top:64vw;
+background:linear-gradient(180deg,rgb(7 7 11/0) 66%,var(--bg)) center top/100% 100vw no-repeat,url(bilder/hero_mobil.webp) center top/100% auto no-repeat,var(--bg)}}
 [data-kopfbild][data-nische="beziehung-psychologie"]>header::before{background-image:url(bilder/kachel_beziehung-psychologie.webp);background-image:image-set(url(bilder/kachel_beziehung-psychologie.webp) 1x,url(bilder/kachel_beziehung-psychologie@2x.webp) 2x)}
 @media (max-width:639px){[data-kopfbild][data-nische="beziehung-psychologie"]>header::before{background-image:url(bilder/kachel_beziehung-psychologie_600.webp);background-image:image-set(url(bilder/kachel_beziehung-psychologie_600.webp) 1x,url(bilder/kachel_beziehung-psychologie.webp) 2x)}}
 [data-kopfbild][data-nische="digital-business"]>header::before{background-image:url(bilder/kachel_digital-business.webp);background-image:image-set(url(bilder/kachel_digital-business.webp) 1x,url(bilder/kachel_digital-business@2x.webp) 2x)}
