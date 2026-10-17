@@ -313,6 +313,45 @@ background:linear-gradient(115deg,transparent 38%,rgb(255 255 255/.16) 50%,trans
 .avatar-rahmen::after,.kachel-bild::before{animation:glanz 8s ease-in-out infinite}}
 @media (prefers-reduced-motion:reduce){.karte::before{display:none}}
 .hero .bogen{display:none}   /* die Boegen liefert jetzt das Hero-Bild */
+
+/* ---- Startseite: ein Newsletter-Block unten im Leisten-Design; Desktop kompakter (Paolo, 17.10.2026) */
+.newsletter[data-kompakt]{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;max-width:62rem;margin:clamp(20px,2vw,40px) auto 0;padding:14px 18px;
+border-radius:16px;background:linear-gradient(180deg,rgb(255 255 255/.08),transparent 60px),rgb(255 255 255/.04)}
+.newsletter[data-kompakt] .nl-ic{width:36px;height:36px;border-radius:10px}
+.newsletter[data-kompakt] p{flex:1 1 260px;margin:0;max-width:none;color:var(--mu)}
+.newsletter[data-kompakt] p strong{color:var(--fg)}
+.newsletter[data-kompakt] .klein{display:block;margin-top:4px;font-size:.8125rem}
+.newsletter[data-kompakt] a.knopf{background:#9ec5ff}
+@media (min-width:880px){
+.kopf-innen{padding-top:2px;padding-bottom:2px}
+.marke,nav.rechts a,.hauptseite,.mk-kopf{min-height:44px}
+main{padding-top:clamp(16px,1.6vw,40px)}
+.hero{margin-top:calc(-1 * clamp(16px,1.6vw,40px));padding-top:clamp(24px,2.6vw,72px);padding-bottom:clamp(18px,2vw,56px);margin-bottom:clamp(14px,1.6vw,40px)}
+.wortmarke{font-size:clamp(2.1rem,.8rem + 3.6vw,6.5rem)}
+.hero h1{margin-bottom:.2em}
+.hero p.lead{max-width:80ch}
+.karten.raster{gap:clamp(12px,1.1vw,32px)}
+.karte .knoepfe{padding-top:11px}
+.karte-fuss,.karten.raster .karte-fuss{padding-top:11px;padding-bottom:clamp(12px,1.1vw,20px)}
+.karte .kopf-text{margin-top:calc(var(--av) / 2 + 4px)}
+:root{--av:clamp(64px,1.8vw + 40px,92px)}}
+
+/* ---- Kopf/Fuss zentriert, Rechtslinks und Copyright in EINER Reihe (Paolo, 17.10.2026) */
+.kopf-innen{justify-content:center;gap:0 14px}
+.kopf-innen .hauptseite,.kopf-innen .mk-kopf{margin:2px 0}
+nav.rechts{flex:1 1 100%;flex-wrap:nowrap;justify-content:center;margin:0}
+nav.rechts a,footer .fuss nav a{min-height:36px;padding:0 4px;white-space:nowrap;font-size:clamp(.72rem,.5rem + .9vw,.875rem)}
+nav.rechts a+a::before{content:"·";content:"·"/"";margin-right:8px;color:var(--mu)}
+.fuss{text-align:center}
+.fuss nav{flex-wrap:nowrap;justify-content:center;margin:0;font-size:clamp(.72rem,.5rem + .9vw,.875rem);white-space:nowrap}
+.fuss p{white-space:nowrap;font-size:clamp(.62rem,.32rem + 1.32vw,.875rem)}
+@media (min-width:640px){nav.rechts a,footer .fuss nav a{min-height:44px;padding:0 6px}}
+/* Newsletter: Text oben, Knopf darunter mittig, Pill wie „Zu den Ratgebern“ */
+.newsletter[data-kompakt]{flex-direction:column;align-items:center;text-align:center}
+.newsletter[data-kompakt] p{flex:none}
+.newsletter[data-kompakt] a.knopf{min-height:44px;padding:0 20px;border-radius:999px;font-weight:700}
+@media (max-width:639px){.newsletter[data-kompakt] a.knopf{align-self:stretch;justify-content:center}}
+@media (max-width:639px){.kopf-innen{gap:0 10px}.marke{gap:6px;font-size:.95rem}.marke svg{width:18px;height:18px}.kopf-innen .mk-kopf,.kopf-innen .hauptseite{padding:0 12px;font-size:.875rem;white-space:nowrap}}
 [data-kopfbild][data-nische="beziehung-psychologie"]>header::before{background-image:url(bilder/kachel_beziehung-psychologie.webp);background-image:image-set(url(bilder/kachel_beziehung-psychologie.webp) 1x,url(bilder/kachel_beziehung-psychologie@2x.webp) 2x)}
 @media (max-width:639px){[data-kopfbild][data-nische="beziehung-psychologie"]>header::before{background-image:url(bilder/kachel_beziehung-psychologie_600.webp);background-image:image-set(url(bilder/kachel_beziehung-psychologie_600.webp) 1x,url(bilder/kachel_beziehung-psychologie.webp) 2x)}}
 [data-kopfbild][data-nische="digital-business"]>header::before{background-image:url(bilder/kachel_digital-business.webp);background-image:image-set(url(bilder/kachel_digital-business.webp) 1x,url(bilder/kachel_digital-business@2x.webp) 2x)}
