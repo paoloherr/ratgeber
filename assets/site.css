@@ -366,6 +366,14 @@ border-radius:999px;color:#9599a8;font-size:.9375rem;font-weight:600;white-space
 .klapp>header .knoepfe.matrix{flex:none;width:min(100% - 2 * var(--rand),22rem);margin:0 auto 18px}
 @media (min-width:640px){.klapp>header .knoepfe.matrix{width:20rem;margin:12px var(--rand) 12px 0}}
 .mk-spruch{margin:-8px 0 20px;color:var(--mu);font-size:clamp(1rem,.95rem + .25vw,1.2rem)}
+
+/* ---- Logo „Durchbruch“ (17.10.2026): rundes Zeichen in der Kopfzeile, Wortmarke im Media-Kit, Mobil-Hero */
+.marke .logo{display:block;flex:none;width:32px;height:32px;border-radius:50%;filter:drop-shadow(0 0 6px rgb(255 255 255/.16))}
+.mk-marke{max-width:min(440px,100%);margin:0 auto clamp(8px,1vw,16px);line-height:0}
+.mk-marke img{display:block;width:100%;height:auto;-webkit-mask-image:radial-gradient(closest-side,#000 84%,transparent);mask-image:radial-gradient(closest-side,#000 84%,transparent)}   /* schwarzer Bildgrund weich in den Seitengrund */
+@media (max-width:639px){.marke .logo{width:28px;height:28px}
+.hero{padding-top:54vw;background-image:linear-gradient(180deg,transparent 0,transparent 42%,rgb(7 7 11/.55) 62%,var(--bg) 100%),url(bilder/hero_mobil.webp);
+background-position:center top;background-size:cover}}
 [data-kopfbild][data-nische="beziehung-psychologie"]>header::before{background-image:url(bilder/kachel_beziehung-psychologie.webp);background-image:image-set(url(bilder/kachel_beziehung-psychologie.webp) 1x,url(bilder/kachel_beziehung-psychologie@2x.webp) 2x)}
 @media (max-width:639px){[data-kopfbild][data-nische="beziehung-psychologie"]>header::before{background-image:url(bilder/kachel_beziehung-psychologie_600.webp);background-image:image-set(url(bilder/kachel_beziehung-psychologie_600.webp) 1x,url(bilder/kachel_beziehung-psychologie.webp) 2x)}}
 [data-kopfbild][data-nische="digital-business"]>header::before{background-image:url(bilder/kachel_digital-business.webp);background-image:image-set(url(bilder/kachel_digital-business.webp) 1x,url(bilder/kachel_digital-business@2x.webp) 2x)}
