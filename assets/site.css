@@ -385,6 +385,113 @@ background:linear-gradient(180deg,rgb(7 7 11/0) 62%,var(--bg)) center top/100% 4
 /* Mobil: quadratisches Bild (Wortmarke oben, Spiegelung bis ~0,7), Text darunter */
 @media (max-width:639px){.hero{padding-top:64vw;
 background:linear-gradient(180deg,rgb(7 7 11/0) 66%,var(--bg)) center top/100% 100vw no-repeat,url(bilder/hero_mobil.webp) center top/100% auto no-repeat,var(--bg)}}
+
+/* ==== Startseite 26.10.2026 (Paolo: Vollmacht Neugestaltung): Hero mit Lichtfaeden, Themenwahl, Neueste Ratgeber,
+   Vertrauensblock. Nur Klassen der Startseite; Konto-/Wochenseiten und Rechtstexte bleiben im selben Grundgeruest. */
+.hero .bogen{display:none}
+.hero-fx{position:absolute;inset:0;z-index:-1;width:100%;height:100%;pointer-events:none}
+.hero h1{margin-bottom:.25em}
+.hero p.lead{margin-bottom:.9em}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 0 1.1em;padding:0;list-style:none}
+.chips li{padding:5px 14px;border:1px solid rgb(255 255 255/.28);border-radius:999px;background:rgb(8 8 12/.55);color:#e9ebf3;font-size:.9375rem;font-weight:600}
+.hero-cta{margin:0}
+.hero-cta .knopf{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 28px;border-radius:999px;background:#9ec5ff;color:#0b0b10;
+font-size:1.0625rem;font-weight:800;text-decoration:none;box-shadow:0 0 28px -4px rgb(158 197 255/.6)}
+.hero-cta .knopf:hover{filter:brightness(1.08)}
+@media (prefers-reduced-motion:no-preference){.hero-cta .knopf{transition:transform .2s ease,filter .2s ease}.hero-cta .knopf:hover{transform:translateY(-2px)}html{scroll-behavior:smooth}}
+
+.themenwahl,.neu,.vertrauen{margin-block:clamp(28px,3.4vw,72px)}
+.themenwahl{margin-top:clamp(8px,1.6vw,32px);scroll-margin-top:12px}
+.themenwahl>h2{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.neu>h2,.vertrauen>h2{margin:0 0 .2em;font-size:clamp(1.35rem,1.05rem + 1vw,2.1rem);line-height:1.2}
+.sek-lead{margin:0 0 18px;color:var(--mu)}
+@media (min-width:600px){.karten.raster{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1280px){.karten.raster{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:2200px){.karten.raster{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+/* Karte der Themenwahl: Titelbild, Name, GROSSER Hauptknopf, darunter die Kanaele (nur vorhandene) */
+.themenwahl .karte{padding:0;overflow:hidden}
+.themenwahl .karte>header{display:contents}
+.themenwahl .kachel-bild{order:1}
+.themenwahl .kopf-zeile{order:2}
+.themenwahl .karte-fuss{order:3}
+.themenwahl .knoepfe{order:4}
+.themenwahl .karte .kopf-zeile{padding:0 var(--rand)}
+.themenwahl .karte h2{font-size:clamp(1rem,.92rem + .3vw,1.25rem)}
+.karte-link{text-decoration:none}
+.karte-link::after{content:"";position:absolute;inset:0;z-index:1}
+.karte a.knopf.karte-link:focus-visible{outline:none}
+.karte:has(a.karte-link:focus-visible){outline:3px solid #fff;outline-offset:3px}
+.themenwahl .karte-fuss,.themenwahl .karten.raster .karte-fuss{display:flex;align-items:center;justify-content:space-between;gap:12px;width:auto;margin:0;
+padding:14px var(--rand) 0}
+.themenwahl .karte-fuss .anzahl{flex:none;font-size:.9375rem;white-space:nowrap}
+.themenwahl .karte-fuss a.knopf{position:static;flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;grid-column:auto;width:auto;
+min-height:48px;padding:0 16px;font-size:1.0625rem;font-weight:800}
+.themenwahl .knoepfe.nur-da{display:flex;gap:10px;width:auto;margin:0;padding:12px var(--rand) var(--rand)}
+.themenwahl .knoepfe.nur-da a{position:relative;z-index:3;flex:1 1 0;min-height:40px;padding:0 10px;font-size:.9375rem;font-weight:600}
+.themenwahl .karte>header .knoepfe a{padding:0 10px}
+
+/* Neueste Ratgeber: Mobil wischbare Reihe (Karten schauen am Rand heraus), ab 900 px drei Spalten */
+.neu-liste{display:grid;grid-auto-flow:column;grid-auto-columns:min(78vw,300px);gap:14px;margin:0 calc(-1 * var(--rand));padding:4px var(--rand) 16px;list-style:none;
+overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--rand);overscroll-behavior-x:contain;scrollbar-width:thin}
+@media (min-width:900px){.neu-liste{grid-auto-flow:row;grid-auto-columns:auto;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.4vw,28px);margin:0;padding:4px 0 0;overflow:visible}}
+.neu-karte{position:relative;display:flex;flex-direction:column;scroll-snap-align:start;border:1px solid color-mix(in srgb,var(--ad) 55%,transparent);border-radius:18px;overflow:hidden;
+background:linear-gradient(180deg,rgb(255 255 255/.08),transparent 80px),rgb(255 255 255/.04);box-shadow:0 0 24px -8px color-mix(in srgb,var(--ad) 35%,transparent)}
+.neu-link{display:flex;flex-direction:column;flex:1;color:var(--fg);text-decoration:none}
+.neu-cover{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;height:auto;background:linear-gradient(135deg,var(--g1),var(--g2))}
+.neu-cover.leer{min-height:120px}
+.neu-text{display:flex;flex:1;flex-direction:column;gap:6px;padding:14px var(--rand) 16px}
+.neu-seite{color:var(--ad);font-size:.8125rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.neu-titel{font-size:1.0625rem;line-height:1.3;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.neu-text small{color:var(--mu);font-size:.8125rem}
+.neu-dl{display:inline-flex;align-items:center;gap:6px;margin-top:auto;padding-top:6px;color:var(--ad);font-weight:700}
+.neu-dl svg{width:20px;height:20px}
+.neu-karte .zusatz{display:flex;align-items:center;gap:8px;min-height:44px;padding:0 var(--rand);border-top:1px solid var(--li);font-size:.875rem;font-weight:600}
+.neu-link:focus-visible{outline-offset:-3px}
+.neu-karte:hover{border-color:var(--ad)}
+@media (prefers-reduced-motion:no-preference){.neu-karte{transition:opacity .4s ease,transform .4s ease,box-shadow .3s ease}.js .neu-karte.vor{opacity:0;transform:translateY(16px)}
+.neu-karte:hover{transform:translateY(-4px)}}
+@media (prefers-reduced-motion:reduce){.js .neu-karte.vor{opacity:1;transform:none}}
+
+/* Vertrauensblock */
+.vertrauen>ul{display:grid;gap:12px;margin:14px 0 0;padding:0;list-style:none}
+@media (min-width:640px){.vertrauen>ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1100px){.vertrauen>ul{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.vertrauen li{display:flex;gap:14px;align-items:flex-start;padding:16px var(--rand);border:1px solid var(--li);border-radius:16px;
+background:linear-gradient(180deg,rgb(255 255 255/.07),transparent 70px),rgb(255 255 255/.03)}
+.v-ic{display:grid;place-items:center;flex:none;width:44px;height:44px;border-radius:12px;background:rgb(158 197 255/.14);color:#9ec5ff}
+.vertrauen h3{margin:0 0 4px;font-size:1.0625rem}
+.vertrauen p{margin:0;color:var(--mu);font-size:.9375rem}
+.vertrauen a{display:inline-block;padding-block:3px}
+@media (max-width:639px){.hero{padding-bottom:20px}.chips li{font-size:.875rem;padding:4px 12px}}
+
+.themenwahl .karte .kopf-text{min-height:5.9rem}
+
+/* Mobil kompakt: Hauptknopf und Kanaele in einer Reihe, Zaehler aus (Karte ~280 px statt ~420 px) */
+@media (max-width:599px){
+.themenwahl .karte{display:grid;grid-template-columns:minmax(0,1fr) auto;align-content:start}
+.themenwahl .kachel-bild,.themenwahl .kopf-zeile{grid-column:1/-1}
+.themenwahl .karte-fuss,.themenwahl .karten.raster .karte-fuss{grid-column:1;padding:12px 0 var(--rand) var(--rand)}
+.themenwahl .karte-fuss .anzahl{display:none}
+.themenwahl .knoepfe.nur-da{grid-column:2;padding:12px var(--rand) var(--rand) 10px}
+.themenwahl .knoepfe.nur-da:has(a+a){grid-column:1/-1;order:5;padding:0 var(--rand) var(--rand)}
+.themenwahl .karte .kopf-text{min-height:0}
+.themenwahl .karte:has(.knoepfe a+a) .karte-fuss{padding-right:var(--rand);padding-bottom:12px}
+}
+@media (max-width:599px){
+.themenwahl .karte-fuss a.knopf{white-space:nowrap;font-size:1rem;padding:0 12px}
+.themenwahl .karte-fuss a.knopf svg{display:none}
+.chips{gap:6px}.chips li{padding:4px 10px;font-size:.8125rem}
+.themenwahl .knoepfe.nur-da a{padding:0 12px}
+}
+.themenwahl .karte .kopf-zeile{flex:none;align-items:flex-start}
+.themenwahl .karte-fuss{margin-top:auto}
+
+/* Klarname als H2, @Handle darunter kleiner; Konto-Balken: nur vorhandene Kanaele (ein Knopf = volle Breite) */
+.karte .handle{margin:2px 0 0;color:var(--mu);font-size:.875rem;overflow-wrap:anywhere}
+.karte .handle+.thema{margin-top:6px}
+.knoepfe.matrix:has(a:only-child){grid-template-columns:minmax(0,1fr)}
+.themenwahl .karte .kopf-text{min-height:6.4rem}
 [data-kopfbild][data-nische="beziehung-psychologie"]>header::before{background-image:url(bilder/kachel_beziehung-psychologie.webp);background-image:image-set(url(bilder/kachel_beziehung-psychologie.webp) 1x,url(bilder/kachel_beziehung-psychologie@2x.webp) 2x)}
 @media (max-width:639px){[data-kopfbild][data-nische="beziehung-psychologie"]>header::before{background-image:url(bilder/kachel_beziehung-psychologie_600.webp);background-image:image-set(url(bilder/kachel_beziehung-psychologie_600.webp) 1x,url(bilder/kachel_beziehung-psychologie.webp) 2x)}}
 [data-kopfbild][data-nische="digital-business"]>header::before{background-image:url(bilder/kachel_digital-business.webp);background-image:image-set(url(bilder/kachel_digital-business.webp) 1x,url(bilder/kachel_digital-business@2x.webp) 2x)}
