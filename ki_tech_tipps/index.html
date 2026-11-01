@@ -3,8 +3,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="index,follow">
 <meta name="tdm-reservation" content="1">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#07070b">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#07070b"><script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('design');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t)}}catch(e){}</script>
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../assets/favicon.png" sizes="32x32">
 <link rel="apple-touch-icon" href="../assets/logo_180.png">
@@ -160,13 +160,90 @@ footer .innen{padding-block:22px 32px}
 footer nav{display:flex;flex-wrap:wrap;gap:0 18px}
 footer nav a{display:inline-flex;align-items:center;min-height:44px;color:var(--fg)}
 footer p{margin:.3rem 0 0;color:var(--mu);font-size:.9rem}
-@media(min-width:2200px){html{font-size:118%}.innen{max-width:2200px}}:root{--kopf:#6ee7ff;--kopf-g:rgba(110,231,255,0.45)}</style></head>
+@media(min-width:2200px){html{font-size:118%}.innen{max-width:2200px}}
+.werkzeuge{display:none;position:relative;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:8px;z-index:30}
+.js .werkzeuge{display:flex}
+.werkzeuge.oben{position:absolute;top:12px;right:var(--rand,16px)}
+.werk-knopf{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;border:1.5px solid rgba(255,255,255,.4);border-radius:999px;background:rgba(8,8,12,.78);color:#fff;font:700 .85rem/1 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;white-space:nowrap;cursor:pointer;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.werk-knopf:hover,.werk-knopf[aria-expanded="true"]{border-color:#fff}
+.werk-knopf:focus-visible{outline:3px solid #9ec5ff;outline-offset:3px}
+.werk-knopf svg{flex:none;transition:transform .15s}
+.werk-knopf[aria-expanded="true"] svg{transform:rotate(180deg)}
+.werk-panel{position:absolute;top:calc(100% + 8px);right:0;width:min(330px,calc(100vw - 32px));padding:14px 16px 16px;border:1px solid #3a3a4c;border-radius:16px;background:#101018;color:#e9edf5;box-shadow:0 18px 44px rgba(0,0,0,.55);text-align:left;font-size:.95rem;line-height:1.4}
+.werk-panel[hidden]{display:none}
+.werk-panel p{margin:0}
+.werk-titel{margin-bottom:6px!important;font-weight:800;color:#fff}
+.werk-panel ul{margin:0 0 10px;padding:0;list-style:none}
+.werk-panel li a{display:flex;align-items:center;min-height:44px;padding:0 4px;color:#cfe0ff;font-weight:700;text-decoration:none;border-radius:8px}
+.werk-panel li a:hover{background:rgba(207,224,255,.12);text-decoration:underline}
+.werk-panel a:focus-visible{outline:3px solid #9ec5ff;outline-offset:2px}
+.werk-hinweis{padding-top:10px;border-top:1px solid #2a2a3a;color:#c3cadb;font-size:.88rem}
+.werk-hinweis a{display:inline-flex;align-items:center;min-height:44px;color:#cfe0ff}
+@media(max-width:520px){.werkzeuge.oben{left:12px;right:12px}.werkzeuge{justify-content:center}.werk-knopf{flex:1 1 auto;padding:0 12px}.werk-panel{left:0;right:0;width:auto}}
+@media(max-width:1023px){.hero-text{padding-top:calc(clamp(40px,6vw,96px) + 56px)}}
+.kopf .werkzeuge{margin-left:auto}
+@media(max-width:700px){.kopf .werkzeuge{flex:1 1 100%;margin:2px 0 4px}.kopf-innen .werkzeuge{flex:1 1 100%}}
+:root[data-theme="light"]{--bg:#f3f5f9;--fl:#ffffff;--fl2:#f5f6fa;--fg:#12141c;--mu:#4a5163;--li:#d3d8e3;color-scheme:light}
+:root[data-theme="light"] .kopf,:root[data-theme="light"] .leiste,:root[data-theme="light"] .hero,:root[data-theme="light"] .s,:root[data-theme="light"] .hk{--bg:#07070b;--fl:#101018;--fl2:#161622;--fg:#e9edf5;--mu:#a9b2c3;--li:#222a3a;color-scheme:dark;color:var(--fg)}
+:where(:root[data-theme="light"]) a{color:#1d4ed8}
+:root[data-theme="light"] body{background:var(--bg);color:var(--fg)}
+:root[data-theme="light"] footer{background:var(--fl);border-top-color:var(--li)}
+:root[data-theme="light"] .skip{background:#12141c;color:#fff}
+:root[data-theme="light"] .leiste{background:rgba(10,10,16,.97)}
+:root[data-theme="light"] .k-leer{background:var(--fl2)}
+:root[data-theme="light"] .k-seite,:root[data-theme="light"] .k .knopf-aus{color:color-mix(in srgb,var(--c) 44%,#000)}
+:root[data-theme="light"] .k .knopf-aus{box-shadow:inset 0 0 0 2px var(--c)}
+:root[data-theme="light"] .kanal:hover{color:#07070b}
+:root[data-theme="light"] .brot li+li::before{color:#7c859a}
+:root[data-theme="light"] .archiv-liste a{color:var(--fg)}
+:root[data-theme="light"] .archiv-liste a:hover{background:var(--fl2)}
+:root[data-theme="light"] .reiter-tab:hover{color:#07070b}
+@media(prefers-color-scheme:light){
+:root:not([data-theme]){--bg:#f3f5f9;--fl:#ffffff;--fl2:#f5f6fa;--fg:#12141c;--mu:#4a5163;--li:#d3d8e3;color-scheme:light}
+:root:not([data-theme]) .kopf,:root:not([data-theme]) .leiste,:root:not([data-theme]) .hero,:root:not([data-theme]) .s,:root:not([data-theme]) .hk{--bg:#07070b;--fl:#101018;--fl2:#161622;--fg:#e9edf5;--mu:#a9b2c3;--li:#222a3a;color-scheme:dark;color:var(--fg)}
+:where(:root:not([data-theme])) a{color:#1d4ed8}
+:root:not([data-theme]) body{background:var(--bg);color:var(--fg)}
+:root:not([data-theme]) footer{background:var(--fl);border-top-color:var(--li)}
+:root:not([data-theme]) .skip{background:#12141c;color:#fff}
+:root:not([data-theme]) .leiste{background:rgba(10,10,16,.97)}
+:root:not([data-theme]) .k-leer{background:var(--fl2)}
+:root:not([data-theme]) .k-seite,:root:not([data-theme]) .k .knopf-aus{color:color-mix(in srgb,var(--c) 44%,#000)}
+:root:not([data-theme]) .k .knopf-aus{box-shadow:inset 0 0 0 2px var(--c)}
+:root:not([data-theme]) .kanal:hover{color:#07070b}
+:root:not([data-theme]) .brot li+li::before{color:#7c859a}
+:root:not([data-theme]) .archiv-liste a{color:var(--fg)}
+:root:not([data-theme]) .archiv-liste a:hover{background:var(--fl2)}
+:root:not([data-theme]) .reiter-tab:hover{color:#07070b}
+}:root{--kopf:#6ee7ff;--kopf-g:rgba(110,231,255,0.45)}</style></head>
 <body><a class="skip" href="#inhalt">Zum Inhalt springen</a>
 <header class="kopf"><div class="innen"><a class="wortmarke" href="../" aria-label="tipps-ratgeber.de – Startseite"><img class="marke" src="../assets/v3/logo_zeichen_192.png" alt="" width="40" height="40" decoding="async">tipps-ratgeber<span>.de</span></a>
-<nav class="nav" aria-label="Hauptnavigation"><a href="../#seiten">Seiten</a><a href="../#neueste">Neueste Ratgeber</a><a href="../archiv/">Archiv</a><a href="../#newsletter">Newsletter</a></nav></div><i class="lk-kopf" aria-hidden="true"></i></header>
+<nav class="nav" aria-label="Hauptnavigation"><a href="../#seiten">Seiten</a><a href="../#neueste">Neueste Ratgeber</a><a href="../archiv/">Archiv</a><a href="../#newsletter">Newsletter</a></nav><div class="werkzeuge" data-werkzeuge><button type="button" class="werk-knopf" id="design" title="Design wechseln: System, hell oder dunkel">Design: System</button><button type="button" class="werk-knopf" id="koop-knopf" aria-expanded="false" aria-controls="koop-panel">Kooperationen<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></button><div class="werk-panel" id="koop-panel" hidden><p class="werk-titel">Kooperationen</p><ul><li><a href="../mediakit/">Media-Kit</a></li><li><a href="https://e7c4f0a3.sibforms.com/serve/MUIFANwmDiyRHtMWeKYgve2TfYFnQr0B93xVCWd4zJTbxV6WP4WXhGyc7ZVXhQRTO2t3Lndaf4pC6qpdGOOF0b1a2qNedX4mn1J4zKqx8zERU4dmRCKYAPlkA_QNdmnpGFaB7i-k8VKTtn4C4a1AVQF9G4xLzc0mjYHilRJBONMzOgrY23XWgpB-ZEtA_IpRIWEeRNen0D2FpyIvHQ==" target="_blank" rel="noopener">Kontaktformular (neuer Tab)</a></li><li><a href="mailto:paolo-schoenherr@gmx.de">E-Mail schreiben</a></li></ul><p class="werk-hinweis">Werbung wird gekennzeichnet. <a href="../impressum.html#werbung-und-kooperationen">Mehr im Impressum</a></p></div></div></div><i class="lk-kopf" aria-hidden="true"></i></header>
 <main id="inhalt" tabindex="-1">
 <div class="innen" style="padding-block:clamp(24px,5vw,60px)"><p class="zurueck"><a class="start-knopf" href="../"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h13V10"/><path d="M10 20v-5.5h4V20"/></svg>Zurück zur Startseite</a></p><div class="hk" style="--c:#6ee7ff;--cg:rgba(110,231,255,0.45)"><span class="titel-bg" aria-hidden="true"><picture><source type="image/webp" srcset="../assets/v3/titel/motiv-ki-tech-tipps_1200.webp 1200w, ../assets/v3/titel/motiv-ki-tech-tipps_1920.webp 1920w" sizes="100vw"><img src="../assets/v3/titel/motiv-ki-tech-tipps_1200.jpg" srcset="../assets/v3/titel/motiv-ki-tech-tipps_1200.jpg 1200w, ../assets/v3/titel/motiv-ki-tech-tipps_1920.jpg 1920w" sizes="100vw" alt="" width="3840" height="1440" loading="lazy" decoding="async"></picture></span><picture><source type="image/webp" srcset="../assets/v3/avatar/ki-tech-tipps_128.webp 128w, ../assets/v3/avatar/ki-tech-tipps_256.webp 256w" sizes="96px"><img src="../assets/v3/avatar/ki-tech-tipps_256.jpg" srcset="../assets/v3/avatar/ki-tech-tipps_128.jpg 128w, ../assets/v3/avatar/ki-tech-tipps_256.jpg 256w" sizes="96px" alt="" width="256" height="256" decoding="async"></picture><div><h1>KI &amp; Technik Tipps</h1><p class="handle">@ki_<wbr>tech_<wbr>tipps</p></div></div><p class="sek-lead">Künstliche Intelligenz verständlich erklärt</p><div class="kanaele" style="--c:#6ee7ff"><a class="kanal" href="https://www.facebook.com/profile.php?id=61596050131591" target="_blank" rel="noopener">Facebook<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="sr"> KI &amp; Tech Tipps (öffnet in neuem Tab)</span></a><a class="kanal" href="https://www.instagram.com/ki_tech_tipps/" target="_blank" rel="noopener">Instagram<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="sr"> @ki_tech_tipps (öffnet in neuem Tab)</span></a><a class="kanal" href="https://www.threads.com/@ki_tech_tipps" target="_blank" rel="noopener">Threads<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="sr"> @ki_tech_tipps (öffnet in neuem Tab)</span></a></div><section class="rubrik" id="aktuell" aria-labelledby="aktuell-titel" style="padding-block:clamp(20px,4vw,40px)"><h2 id="aktuell-titel">Aktueller Ratgeber</h2><ul class="gross-liste"><li class="k gross" style="--c:#6ee7ff;--cg:rgba(110,231,255,0.45)"><span class="k-bild" aria-hidden="true"><picture><source type="image/webp" srcset="../assets/v3/cover/2026-11-01_dateien-umbenennen-mit-ki-schema-testlauf-und-pru_480.webp 480w, ../assets/v3/cover/2026-11-01_dateien-umbenennen-mit-ki-schema-testlauf-und-pru_960.webp 960w" sizes="(min-width:1200px) 18vw,(min-width:900px) 23vw,(min-width:640px) 31vw,46vw"><img src="../assets/v3/cover/2026-11-01_dateien-umbenennen-mit-ki-schema-testlauf-und-pru_480.jpg" srcset="../assets/v3/cover/2026-11-01_dateien-umbenennen-mit-ki-schema-testlauf-und-pru_480.jpg 480w, ../assets/v3/cover/2026-11-01_dateien-umbenennen-mit-ki-schema-testlauf-und-pru_960.jpg 960w" sizes="(min-width:1200px) 18vw,(min-width:900px) 23vw,(min-width:640px) 31vw,46vw" alt="Titelseite des Ratgebers „Dateien umbenennen mit KI: Schema, Testlauf und Prüfliste“" width="1080" height="1350" loading="lazy" decoding="async"></picture></span><div class="k-text"><span class="k-seite">KI &amp; Technik</span><h3>Dateien umbenennen mit KI: Schema, Testlauf und Prüfliste</h3><p class="k-meta">Erscheint am 01.11.2026 · PDF · <span class="nb">10 Seiten</span></p><span class="knopf knopf-aus" role="note">Erscheint bald</span></div></li></ul></section><section class="rubrik" id="archiv" aria-labelledby="archiv-titel" style="padding-block:clamp(20px,4vw,40px)"><h2 id="archiv-titel">Archiv nach Kalenderwoche</h2><ul class="archiv-liste"><li><a href="2026/">Alle Ratgeber 2026</a></li><li><a href="2026/KW44/">Ratgeber KW 44/2026 · 26.10.–01.11.2026</a></li></ul></section><p class="hinweis"><strong>Hinweis:</strong> Inhalte KI-generiert, ohne Gewähr. Keine Rechts- oder IT-Sicherheitsberatung.</p><p class="hinweis">Alle Inhalte sind KI-generiert (Art. 50 KI-VO), dienen der allgemeinen Information und ersetzen keine Anlage-, Steuer-, Rechts-, medizinische, ernährungsfachliche oder therapeutische Beratung im Einzelfall. Angaben ohne Gewähr.</p></div>
 </main>
 <footer><div class="innen"><nav aria-label="Rechtliches"><a href="../impressum.html">Impressum</a><a href="../datenschutz.html">Datenschutz</a><a href="../nutzungsbedingungen.html">Nutzungsbedingungen</a><a href="../ki/">KI-Hinweis</a><a href="../mediakit/">Kooperation &amp; Media-Kit</a></nav>
 <p>© 2026 Paolo Schönherr · Stand: 01.11.2026 · Inhalte KI-generiert</p></div></footer>
+<script>
+(function(){
+  "use strict";
+  var w=document.documentElement,d=document.getElementById("design"),k=document.getElementById("koop-knopf"),p=document.getElementById("koop-panel");
+  if(!d||!k||!p){return;}
+  var T={"":"Design: System",light:"Design: hell",dark:"Design: dunkel"},R={"":"light",light:"dark",dark:""};
+  function aktuell(){var a=w.getAttribute("data-theme");return a==="light"||a==="dark"?a:"";}
+  function zeige(){d.textContent=T[aktuell()];}
+  d.addEventListener("click",function(){
+    var n=R[aktuell()];
+    if(n){w.setAttribute("data-theme",n);}else{w.removeAttribute("data-theme");}
+    try{if(n){localStorage.setItem("design",n);}else{localStorage.removeItem("design");}}catch(e){}
+    zeige();
+  });
+  zeige();
+  function zu(fokus){k.setAttribute("aria-expanded","false");p.hidden=true;if(fokus){k.focus();}}
+  function auf(){k.setAttribute("aria-expanded","true");p.hidden=false;}
+  k.addEventListener("click",function(){if(p.hidden){auf();}else{zu(false);}});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!p.hidden){zu(true);}});
+  document.addEventListener("click",function(e){if(!p.hidden&&!p.contains(e.target)&&!k.contains(e.target)){zu(false);}});
+  document.addEventListener("focusin",function(e){if(!p.hidden&&!p.contains(e.target)&&!k.contains(e.target)){zu(false);}});
+})();
+</script>
 </body></html>
