@@ -520,6 +520,11 @@ background:color-mix(in srgb,var(--a) 14%,transparent);color:var(--a);font:700 .
 @media (max-width:479px){.tag-badge{min-width:3.9rem;padding:4px 6px;font-size:.75rem}}
 @media (prefers-reduced-motion:no-preference){.kw-karte{transition:box-shadow .25s ease,border-color .25s ease}.kw-karte .k-titel{transition:color .2s ease}}
 
+/* ---- Pinterest-Knopf (Board der Nische, 09.11.2026): gleiche Pill wie die anderen Kanaele, Seitenfarbe fuehrt;
+   Pinterest-Rot nur als kleiner Punkt vor dem Text. Mit 4 Kanaelen auf der Startseite 2 x 2 statt einer Reihe. */
+.knoepfe a.pin-knopf::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:#e60023}
+.themenwahl .knoepfe.nur-da:has(a:nth-child(4)){display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+
 /* v3-Schicht für die Seiten im bisherigen Rahmen (Rechtstexte, Media-Kit, KI-Hinweis, Jahres-/KW-/Empfehlungsseiten):
    Kopf, Leiste mit „Zurück zur Startseite“, Typografie, Karten und Tabellen im Lichtkante-Stil (Paolo 30.10.2026).
    Wird von build_downloads.py (HOMEPAGE_DESIGN v3) hinter design.css gehängt. */
