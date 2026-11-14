@@ -123,6 +123,12 @@ section.rubrik{padding-block:clamp(32px,6vw,80px)}
 .archiv-liste{margin:0;padding:0;list-style:none;display:grid;gap:8px}
 .archiv-liste a{display:flex;min-height:44px;align-items:center;padding:0 16px;border:1px solid var(--li);border-left:6px solid var(--kopf);border-radius:12px;background:var(--fl);color:var(--fg);text-decoration:none}
 .archiv-liste a:hover{background:var(--fl2)}
+.ar-baum details{margin:0 0 10px;border:1px solid var(--li);border-radius:14px;background:var(--fl)}
+.ar-baum summary{display:flex;align-items:center;gap:12px;min-height:48px;padding:6px 16px;cursor:pointer;font-weight:800}
+.ar-baum summary small{margin-left:auto;color:var(--mu);font-weight:600}
+.ar-baum .ar-kw{margin:0 12px 12px;background:var(--bg)}
+.ar-seite{margin:0 16px 14px}.ar-seite h2,.ar-seite h3{margin:12px 0 6px;font-size:1.05rem}
+.ar-seite ul{margin:0;padding:0;list-style:none}.ar-seite li a{display:flex;align-items:center;min-height:44px}
 .seiten{grid-template-columns:1fr}
 @media(min-width:700px){.seiten{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(min-width:1200px){.seiten{grid-template-columns:repeat(5,minmax(0,1fr))}}
