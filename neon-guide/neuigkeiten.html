@@ -123,7 +123,25 @@
 .ng-pk h3 a::after{content:" →";color:var(--n1)}
 .ng-pk p{margin:0;color:var(--nm);font-size:.95rem}
 .ng-fuenf small{display:block;margin-top:.35em;color:var(--nm)}
-.ng-fuenf .mg-art{margin-top:.2em}</style>
+.ng-fuenf .mg-art{margin-top:.2em}
+.ng-vergleich{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;margin:0}
+.ng-vk{background:var(--nk);border:1px solid var(--nr);border-radius:20px;padding:16px 20px 18px;min-width:0}
+.ng-vk.ng-vk-m{border:1.5px solid var(--n1);background:var(--nk2)}
+.ng-vk h3{margin:0 0 .2em;font:800 1.25rem/1.2 Wortmarke,system-ui,sans-serif}
+.ng-vk .ng-vk-u{margin:0 0 .7em;color:var(--nm);font-size:.95rem}
+.ng-vk ul{margin:0;padding-left:1.15em;display:grid;gap:.5em}
+.ng-vk li{color:var(--nt)}
+.ng-vk li strong{color:var(--n1)}
+.ng-vk .ng-preis{margin:.9em 0 0;font-size:.9rem;color:var(--nm)}
+.ng-ab{display:flex;width:max-content;max-width:100%;align-items:center;gap:.45em;margin-top:.6em;font-weight:700;color:var(--hl);cursor:pointer}
+.ng-ab input{width:1.3rem;height:1.3rem;margin:0;accent-color:var(--n1);cursor:pointer}
+.ng-ab input:focus-visible{outline:3px solid var(--n3);outline-offset:2px}
+.ng-liste>li:has(input:checked)>strong{text-decoration:line-through;text-decoration-color:var(--n1);text-decoration-thickness:2px}
+.ng-karten.ng-tk{grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr))}
+.ng-demo-stand{font-weight:800;color:var(--n1);margin:.2em 0 .8em}
+.ng-sprung ul{list-style:none;padding:0;margin:.4em 0 0;display:flex;flex-wrap:wrap;gap:.5rem}
+.ng-sprung a{display:inline-block;font:800 .88rem/1 Wortmarke,system-ui,sans-serif;text-decoration:none;padding:.65em .9em;border-radius:999px;border:1.5px solid var(--nr);color:var(--nt);background:var(--nk)}
+.ng-sprung a:hover,.ng-sprung a:focus-visible{border-color:var(--n1)}</style>
 <style>:root{--bg:#07070b;--fl:#101018;--fl2:#161622;--fg:#e9edf5;--mu:#a9b2c3;--li:#222a3a;--kopf:#cfe0ff;--kopf-g:rgba(207,224,255,.45);--r:16px;--rand:clamp(16px,4vw,40px)}
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;color-scheme:dark}
