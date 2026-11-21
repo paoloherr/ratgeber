@@ -120,7 +120,7 @@ a{color:#9ec5ff;text-underline-offset:.18em}
 .innen{width:100%;max-width:min(1760px,100%);margin:0 auto;padding-inline:var(--rand)}
 .kopf{position:relative;background:#0a0a10}
 .kopf .innen{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 24px;min-height:64px;padding-block:8px}
-.wortmarke{display:inline-flex;align-items:center;font:800 clamp(1.25rem,2.4vw,1.7rem)/1 Wortmarke,system-ui,sans-serif;letter-spacing:-.015em;color:#fff;text-decoration:none}
+.wortmarke{display:inline-flex;align-items:center;min-height:44px;font:800 clamp(1.25rem,2.4vw,1.7rem)/1 Wortmarke,system-ui,sans-serif;letter-spacing:-.015em;color:#fff;text-decoration:none}
 .marke{display:block;flex:none;width:40px;height:40px;margin-right:10px}
 .start-knopf{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border:2px solid var(--kopf);border-radius:999px;color:var(--fg);font-weight:800;font-size:.95rem;text-decoration:none;white-space:nowrap;box-shadow:0 0 18px var(--kopf-g)}
 .start-knopf:hover{background:var(--kopf);color:#07070b}
@@ -128,7 +128,7 @@ a{color:#9ec5ff;text-underline-offset:.18em}
 .mk-dezent{margin:1.2rem 0 0;font-size:.9rem;color:var(--mu)}.mk-dezent a{color:var(--mu)}
 .wortmarke span{color:var(--kopf)}
 .nav{display:flex;flex-wrap:wrap;gap:0 20px}
-.nav a{display:inline-flex;align-items:center;min-height:44px;color:var(--fg);font-weight:600;text-decoration:none;font-size:.97rem}
+.nav a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;color:var(--fg);font-weight:600;text-decoration:none;font-size:.97rem}
 .nav a:hover{color:#fff;text-decoration:underline}
 .lk-kopf{display:block;height:6px;background:var(--kopf);box-shadow:0 0 28px var(--kopf-g);position:relative;z-index:2}
 .leiste{position:sticky;top:0;z-index:10;background:rgba(10,10,16,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 10px 26px rgba(0,0,0,.4)}
@@ -186,7 +186,7 @@ section.rubrik{padding-block:clamp(32px,6vw,80px)}
 .k-meta strong{display:block}
 .nb{white-space:nowrap}
 .knopf-aus{background:transparent;color:var(--c);box-shadow:inset 0 0 0 2px var(--c);white-space:nowrap;padding:0 14px}
-.k-werbung a{display:block}
+.k-werbung a{display:flex;align-items:center;min-height:44px}
 .k-werbung{margin:0;font-size:.82rem;color:var(--mu)}
 .k .knopf{margin-top:auto;align-self:flex-start;min-height:44px;padding:0 18px}
 .k-text>.knopf{margin-top:auto;align-self:center}
