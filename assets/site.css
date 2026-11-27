@@ -525,6 +525,22 @@ background:color-mix(in srgb,var(--a) 14%,transparent);color:var(--a);font:700 .
 .knoepfe a.pin-knopf::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:#e60023}
 .themenwahl .knoepfe.nur-da:has(a:nth-child(4)){display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
 
+/* ---- Geräte-QA 27.11.2026 (CTO): Handy/Klapphandy ----
+   Fußzeile/Kopf-Links umbrechen statt eine Zeile zu quetschen (344 px, Fold-Außendisplay), Touchfläche 44 px,
+   Schrift mindestens 14 px; lange Handles/Wörter brechen um; bei sehr niedriger Höhe keine mitlaufende Kopfleiste. */
+html,body{overflow-wrap:break-word}
+h1,h2,h3,.handle,.recht a{overflow-wrap:anywhere}
+@media (max-width:639px){
+nav.rechts{flex-wrap:wrap}
+nav.rechts a,footer .fuss nav a{min-height:44px;padding:0 8px;font-size:.875rem}
+nav.rechts a+a::before{display:none}
+.fuss nav{flex-wrap:wrap;white-space:normal;font-size:.875rem}
+.fuss p{white-space:normal;font-size:.875rem}
+.recht p a,.recht li a{display:inline;padding-block:0}
+button.werk-knopf,.k-seite,.k-meta,.k-werbung,.nb,.sh-meta,.bt-nische,.tk-thema,.tk-meta,.neu-seite,.klein,small,figcaption,time,.reiter-tab,.kw-leiste b,.tag-badge,.neu-text small,.chips li{font-size:.875rem!important}
+}
+@media (max-height:450px){header,.leiste,.kopf{position:static!important}}
+
 /* v3-Schicht für die Seiten im bisherigen Rahmen (Rechtstexte, Media-Kit, KI-Hinweis, Jahres-/KW-/Empfehlungsseiten):
    Kopf, Leiste mit „Zurück zur Startseite“, Typografie, Karten und Tabellen im Lichtkante-Stil (Paolo 30.10.2026).
    Wird von build_downloads.py (HOMEPAGE_DESIGN v3) hinter design.css gehängt. */
@@ -578,7 +594,7 @@ nav.rechts{flex:1 1 auto;justify-content:flex-end;margin-left:auto;flex-wrap:wra
 .werkzeuge{display:none;position:relative;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:8px;z-index:30}
 .js .werkzeuge{display:flex}
 .werkzeuge.oben{position:absolute;top:12px;right:var(--rand,16px)}
-.werk-knopf{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;border:1.5px solid rgba(255,255,255,.4);border-radius:999px;background:rgba(8,8,12,.78);color:#fff;font:700 .85rem/1 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;white-space:nowrap;cursor:pointer;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.werk-knopf{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;border:1.5px solid rgba(255,255,255,.4);border-radius:999px;background:rgba(8,8,12,.78);color:#fff;font:700 .875rem/1 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;white-space:nowrap;cursor:pointer;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 .werk-knopf:hover,.werk-knopf[aria-expanded="true"]{border-color:#fff}
 .werk-knopf:focus-visible{outline:3px solid #9ec5ff;outline-offset:3px}
 .werk-knopf svg{flex:none;transition:transform .15s}
