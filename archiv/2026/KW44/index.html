@@ -177,6 +177,9 @@ footer nav{display:flex;flex-wrap:wrap;gap:0 18px}
 footer nav a{display:inline-flex;align-items:center;min-height:44px;color:var(--fg)}
 footer p{margin:.3rem 0 0;color:var(--mu);font-size:.9rem}
 @media(min-width:2200px){html{font-size:118%}.innen{max-width:2200px}}
+/* Geräte-QA 27.11.2026: Schrift mindestens 14 px auf Handy; bei niedriger Höhe keine mitlaufende Leiste */
+@media(max-width:639px){html .reiter-tab,html .tk-thema,html .tk-meta,html .tk-meta strong,html .k-seite,html .k-meta,html .k-werbung,html .nb,html .sh-meta,html .bt-nische,html small,html time,html figcaption,html .klein,html .k-werbung a,html .tk-werbung,html .sh-meta,html .sh-werbung,html .sh-werbung a,html .s .handle,html .hk .handle,html .handle{font-size:.875rem!important}}
+@media(max-height:450px){html .leiste{position:static}}
 .werkzeuge{display:none;position:relative;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:8px;z-index:30}
 .js .werkzeuge{display:flex}
 .werkzeuge.oben{position:absolute;top:12px;right:var(--rand,16px)}

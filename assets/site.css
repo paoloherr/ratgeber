@@ -540,6 +540,7 @@ nav.rechts a+a::before{display:none}
 button.werk-knopf,.k-seite,.k-meta,.k-werbung,.nb,.sh-meta,.bt-nische,.tk-thema,.tk-meta,.neu-seite,.klein,small,figcaption,time,.reiter-tab,.kw-leiste b,.tag-badge,.neu-text small,.chips li{font-size:.875rem!important}
 }
 @media (max-height:450px){header,.leiste,.kopf{position:static!important}}
+@media (pointer:coarse){th a{display:inline-flex;align-items:center;min-height:44px}}
 
 /* v3-Schicht für die Seiten im bisherigen Rahmen (Rechtstexte, Media-Kit, KI-Hinweis, Jahres-/KW-/Empfehlungsseiten):
    Kopf, Leiste mit „Zurück zur Startseite“, Typografie, Karten und Tabellen im Lichtkante-Stil (Paolo 30.10.2026).
